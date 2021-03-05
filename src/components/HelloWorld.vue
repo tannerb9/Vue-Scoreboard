@@ -26,8 +26,13 @@ export default {
     msg: String,
   },
   data() {
-    return {};
+    return {
+      team1Counter: 0,
+      team2Counter: 0,
+      leaderboardMessage: "",
+    };
   },
+  methods: {},
 };
 </script>
 
