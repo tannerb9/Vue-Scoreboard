@@ -2,18 +2,13 @@
   <div>
     <div class="hello">
       <h1><span>Team 1</span> vs <span>Team 2</span></h1>
-      <h3></h3>
+      <h3>{{ leaderboardMessage }}</h3>
     </div>
     <div>
-      <div>
-        <title></title>
-        <button>-</button>
-        <button>+</button>
-      </div>
-      <div>
-        <title></title>
-        <button>-</button>
-        <button>+</button>
+      <div v-for="team in teams" :key="team.name">
+        <h1 class="score">{{ team.score }}</h1>
+        <button class="subtractButton">-</button>
+        <button class="addButton">+</button>
       </div>
     </div>
   </div>
@@ -27,12 +22,22 @@ export default {
   },
   data() {
     return {
-      team1Counter: 0,
-      team2Counter: 0,
+      teams: [
+        { name: "Team 1", score: 0 },
+        { name: "Team 2", score: 0 },
+      ],
       leaderboardMessage: "",
     };
   },
-  methods: {},
+  methods: {
+    updateScore() {},
+    changeLeaderboardMessage() {},
+  },
+  computed: {
+    updatedLeaderboardMessage() {
+      return this.leaderboardMessage;
+    },
+  },
 };
 </script>
 
